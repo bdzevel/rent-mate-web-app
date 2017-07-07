@@ -1,0 +1,25 @@
+const express = require('express');
+const winston = require('winston');
+const dotenv = require('dotenv');
+const path = require('path');
+
+dotenv.config();
+winston.level = process.env.TRACE_LEVEL || 'info';
+
+const PUBLIC_RESOURCE_FOLDER_PATH = path.join(__dirname, '..', 'public');
+
+const app = express();
+app.use('/public', express.static(PUBLIC_RESOURCE_FOLDER_PATH));
+app.use(function(req, res, next) {
+  res.sendFile(path.join(PUBLIC_RESOURCE_FOLDER_PATH, 'index.html'));
+});
+app.use(function(err, req, res, next) {
+  winston.error(err.message, err.stack);
+  res.status(500).end();
+});
+
+const port = process.env.PORT || 3002;
+app.listen(port);
+winston.info(`Finished bootstrapping. Listening on ${port}.`);
+
+module.exports = app;
