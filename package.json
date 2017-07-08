@@ -4,7 +4,9 @@
   "description": "Front-end web app server for RentMate",
   "author": "bdzevel",
   "scripts": {
-    "precommit": "grunt test",
+    "precommit": "npm test",
+    "prepush": "npm test",
+    "test": "grunt test",
     "start": "node --use-strict ./server/app"
   },
   "dependencies": {
