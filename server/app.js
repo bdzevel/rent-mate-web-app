@@ -6,7 +6,7 @@ const path = require('path');
 dotenv.config();
 winston.level = process.env.TRACE_LEVEL || 'info';
 
-const PUBLIC_RESOURCE_FOLDER_PATH = path.join(__dirname, '..', 'public');
+const PUBLIC_RESOURCE_FOLDER_PATH = path.resolve(__dirname, '..', 'public');
 
 const app = express();
 app.use('/assets', express.static(PUBLIC_RESOURCE_FOLDER_PATH));

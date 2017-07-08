@@ -1,3 +1,5 @@
+const webpackConfig = require('./webpack.config');
+
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -8,6 +10,7 @@ module.exports = function(grunt) {
       src: [ '.' ],
     },
     webpack: {
+      prod: webpackConfig,
     },
   });
 
@@ -16,5 +19,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [ 'eslint', 'webpack' ]);
   grunt.registerTask('test', [ 'eslint' ]);
-  grunt.registerTask('build', [ 'eslint', 'webpack' ]);
+  grunt.registerTask('build', [ 'webpack' ]);
 };
