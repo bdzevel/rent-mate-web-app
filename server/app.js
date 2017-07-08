@@ -9,10 +9,14 @@ winston.level = process.env.TRACE_LEVEL || 'info';
 const PUBLIC_RESOURCE_FOLDER_PATH = path.join(__dirname, '..', 'public');
 
 const app = express();
-app.use('/public', express.static(PUBLIC_RESOURCE_FOLDER_PATH));
+app.use('/assets', express.static(PUBLIC_RESOURCE_FOLDER_PATH));
+
+// eslint-disable-next-line no-unused-vars
 app.use(function(req, res, next) {
   res.sendFile(path.join(PUBLIC_RESOURCE_FOLDER_PATH, 'index.html'));
 });
+
+// eslint-disable-next-line no-unused-vars
 app.use(function(err, req, res, next) {
   winston.error(err.message, err.stack);
   res.status(500).end();

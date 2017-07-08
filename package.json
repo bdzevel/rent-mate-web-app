@@ -4,6 +4,7 @@
   "description": "Front-end web app server for RentMate",
   "author": "bdzevel",
   "scripts": {
+    "precommit": "grunt test",
     "start": "node --use-strict ./server/app"
   },
   "dependencies": {
@@ -16,7 +17,9 @@
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
     "grunt": "^1.0.1",
+    "grunt-webpack": "^3.0.0",
     "gruntify-eslint": "^4.0.0",
-    "husky": "^0.14.1"
+    "husky": "^0.14.1",
+    "webpack": "^3.1.0"
   }
 }

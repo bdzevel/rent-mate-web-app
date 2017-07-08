@@ -3,14 +3,18 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     eslint: {
       options: {
-        config: '.eslintrc.js',
+        config: './.eslintrc.js',
       },
-      src: [ '**/*.js' ],
+      src: [ '.' ],
+    },
+    webpack: {
     },
   });
 
   grunt.loadNpmTasks('gruntify-eslint');
+  grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('default', [ 'eslint' ]);
-  grunt.registerTask('build', [ 'eslint' ]);
+  grunt.registerTask('default', [ 'eslint', 'webpack' ]);
+  grunt.registerTask('test', [ 'eslint' ]);
+  grunt.registerTask('build', [ 'eslint', 'webpack' ]);
 };
