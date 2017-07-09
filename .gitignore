@@ -57,4 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
+# Visual Studio Code config
 .vscode/
+
+# Built & minified JavaScript + CSS files
+dist/
+public/js/
+public/css/

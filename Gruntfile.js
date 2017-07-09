@@ -9,15 +9,22 @@ module.exports = function(grunt) {
       },
       src: [ '.' ],
     },
+    stylelint: {
+      options: {
+        configFile: './.stylelintrc.json',
+      },
+      src: [ './app/css/**/*.scss' ],
+    },
     webpack: {
       prod: webpackConfig,
     },
   });
 
   grunt.loadNpmTasks('gruntify-eslint');
+  grunt.loadNpmTasks('grunt-stylelint');
   grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('default', [ 'eslint', 'webpack' ]);
-  grunt.registerTask('test', [ 'eslint' ]);
+  grunt.registerTask('test', [ 'eslint', 'stylelint' ]);
   grunt.registerTask('build', [ 'webpack' ]);
+  grunt.registerTask('default', [ 'eslint', 'stylelint', 'webpack' ]);
 };
