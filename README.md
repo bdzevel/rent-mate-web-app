@@ -32,13 +32,17 @@ I use [Visual Studio Code](https://code.visualstudio.com/) with the following ex
 Node.js and NPM.
 Dependencies are mainly managed by npm.
 You can choose to install the `grunt` command globally for yourself:
-```npm install -g grunt-cli```
+```
+npm install -g grunt-cli
+```
 
 ### Workflow
 
 1. Setup
     1. Install dependencies
-    ```npm install```
+    ```
+    npm install
+    ```
     2. Copy `.dev.example.env` to `.env`
 
 2. Code
@@ -53,9 +57,13 @@ You can choose to install the `grunt` command globally for yourself:
    Note that linting is enforced on a pre-commit hook using [husky](https://github.com/typicode/husky) but it's good to know that you're square before trying to commit
 
 4. Build
-```npm run build```
+```
+npm run build
+```
 
 5. Run
-```npm start```
+```
+npm start
+```
 
    By default this will start on port 3002 so you can access the app in a browser by navigating to localhost:3002
