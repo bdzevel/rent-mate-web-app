@@ -7,13 +7,13 @@ Front-end web app server for RentMate
 * [Node.js](https://nodejs.org) as a web server to serve the front end
 * [React](https://facebook.github.io/react/) as the front end framework
 * [SASS](http://sass-lang.com/) as the CSS preprocessor
- * Use SCSS syntax
+   * Use SCSS syntax
 * [Webpack](https://webpack.github.io/) for building, bundling, and minifying JS/CSS code
 * [Grunt](https://gruntjs.com/) as a task runner, for automation and helpful scripts
-  * (I may switch to [Gulp](http://gulpjs.com/) for this at some point)
+    * (I may switch to [Gulp](http://gulpjs.com/) for this at some point)
 * [Babel](https://babeljs.io/) to transpile to ES5
 * [ESLint](http://eslint.org/) for JS linting (enforced on pre-commit hook)
-  * [Airbnb JavaScript style guide](https://github.com/airbnb/javascript) used as a base and lightly modified
+    * [Airbnb JavaScript style guide](https://github.com/airbnb/javascript) used as a base and lightly modified
 * [Stylelint](https://stylelint.io/) for CSS linting (enforced on pre-commit hook)
 
 ## Development
@@ -37,16 +37,16 @@ You can choose to install the `grunt` command globally for yourself:
 ### Workflow
 
 1. Setup
-  * Install dependencies
-  ```npm install```
-  * Copy `.dev.example.env` to `.env`
+    1. Install dependencies
+    ```npm install```
+    2. Copy `.dev.example.env` to `.env`
 
 2. Code
-  * Front end files located under `app/`
-  * JS/JSX files located under `app/js`
-  * SCSS files located under `app/css`
-  * `public/` contains build/bundled/minified files and `index.html` which is the main layout in pure HTML
-  * Node.js-based web server located under `server/`
+    1. Front end files located under `app/`
+    2. JS/JSX files located under `app/js`
+    3. SCSS files located under `app/css`
+    4. `public/` contains build/bundled/minified files and `index.html` which is the main layout in pure HTML
+    5. Node.js-based web server located under `server/`
 
 3. Lint
 
