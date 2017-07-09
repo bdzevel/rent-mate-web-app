@@ -1,6 +1,9 @@
 module.exports = {
-  'extends': 'airbnb-base',
-  'rules': {
+  plugins: [
+    'react'
+  ],
+  extends: 'airbnb',
+  rules: {
     'prefer-arrow-callback': 'off',
     'space-before-function-paren': 'off',
     'func-names': 'off',
@@ -16,6 +19,15 @@ module.exports = {
       'LabeledStatement',
       'WithStatement',
     ],
-     
+
+    'jsx-a11y/href-no-hash': 'off',
+  },
+  parserOptions: {
+    ecmaFeatures: {
+      'jsx': true,
+    }
+  },
+  env: {
+    browser: true,
   }
 };
