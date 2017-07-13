@@ -11,8 +11,7 @@ const PUBLIC_RESOURCE_FOLDER_PATH = path.resolve(__dirname, '..', 'public');
 const app = express();
 app.use('/assets', express.static(PUBLIC_RESOURCE_FOLDER_PATH));
 
-// eslint-disable-next-line no-unused-vars
-app.use(function(req, res, next) {
+app.get('/*', function(req, res) {
   res.sendFile(path.join(PUBLIC_RESOURCE_FOLDER_PATH, 'index.html'));
 });
 

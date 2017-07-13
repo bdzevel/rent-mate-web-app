@@ -1,14 +1,17 @@
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-import superheroes from './superheroes';
+import LoginForm from './components/auth/login-form';
+
+import store from './store/app-store';
 
 const App = function() {
   return (
-    <div className="superheroes">
-      { superheroes.map(h => <p key={h}>{h}</p>) }
-    </div>
+    <Provider store={store}>
+      <LoginForm />
+    </Provider>
   );
 };
 render(<App />, document.getElementById('app'));

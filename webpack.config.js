@@ -5,8 +5,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'app/js/app.jsx'),
-    vendor: [ 'react', 'react-dom', 'babel-polyfill' ],
+    vendor: [ 'react', 'react-dom', 'redux', 'react-redux', 'react-router', 'babel-polyfill' ],
     styles: path.resolve(__dirname, 'app/css/main.scss'),
+  },
+  resolve: {
+    extensions: [ '.js', '.jsx' ],
   },
   devtool: 'source-map',
   output: {
@@ -48,6 +51,11 @@ module.exports = {
       },
       output: {
         comments: false,
+      },
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
     new ExtractTextPlugin({
