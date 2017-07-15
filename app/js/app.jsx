@@ -3,14 +3,14 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import LoginForm from './components/auth/login-form';
+import Layout from './components/layout/layout';
 
 import store from './store/app-store';
 
 const App = function() {
   return (
     <Provider store={store}>
-      <LoginForm />
+      <Layout />
     </Provider>
   );
 };
