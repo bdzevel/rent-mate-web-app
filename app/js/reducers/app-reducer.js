@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import navReducer from './nav-reducer';
 import userReducer from './user-reducer';
+import notificationReducer from './notification-reducer';
 
 export default combineReducers({
-  nav: navReducer,
   user: userReducer,
+  notification: notificationReducer,
 });

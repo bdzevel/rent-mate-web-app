@@ -1,13 +1,15 @@
 import { actions } from '../resources/constants';
 
 const initialState = {
-  profile: undefined,
+  profile: {
+    isAuthenticated: false,
+  },
 };
 
 function reduce(state = initialState, action) {
   switch (action.type) {
     case (actions.USER_UPDATE_CONTEXT):
-      return Object.assign({ }, state, { profile: action.profile });
+      return Object.assign({ }, state, { profile: action.payload });
     default:
       break;
   }

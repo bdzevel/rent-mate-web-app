@@ -11,6 +11,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'guard-for-in': 'off',
     'class-methods-use-this': 'off',
+    'no-plusplus': 'off',
 
     'max-len': ["error", 160],
     'array-bracket-spacing': [ 'error', 'always' ],
@@ -22,6 +23,7 @@ module.exports = {
     ],
 
     'jsx-a11y/href-no-hash': 'off',
+    'react/require-default-props': 'off',
   },
   parserOptions: {
     ecmaFeatures: {
