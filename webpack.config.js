@@ -6,7 +6,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'app/js/app.jsx'),
-    vendor: [ 'react', 'prop-types', 'react-dom', 'redux', 'react-redux', 'react-router', 'react-router-dom', 'babel-polyfill', 'whatwg-fetch' ],
+    vendor: [ 'react', 'prop-types', 'react-dom', 'redux', 'react-redux', 'react-router-dom', 'babel-polyfill', 'whatwg-fetch' ],
     styles: path.resolve(__dirname, 'app/css/main.scss'),
   },
   resolve: {

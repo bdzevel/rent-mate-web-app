@@ -53,7 +53,7 @@ class RegisterForm extends React.Component {
         <input id="password" type="password" value={this.state.password} onChange={this.handleChange('password')} />
         <br />
         <label htmlFor="confirmPassword">Confirm Password </label>
-        <input id="confirmPassword" type="password" value={this.state.password} onChange={this.handleChange('confirmPassword')} />
+        <input id="confirmPassword" type="password" value={this.state.confirmPassword} onChange={this.handleChange('confirmPassword')} />
         <hr />
         <button onClick={this.handleSubmit}>Register</button>
       </div>
