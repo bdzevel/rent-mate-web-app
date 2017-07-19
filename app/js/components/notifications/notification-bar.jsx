@@ -13,7 +13,8 @@ class NotificationBar extends React.Component {
     this.handleDismiss = this.handleDismiss.bind(this);
   }
 
-  handleDismiss() {
+  handleDismiss(e) {
+    e.preventDefault();
     notificationService.dismiss();
   }
 
@@ -21,7 +22,7 @@ class NotificationBar extends React.Component {
     const className = `notification-bar ${this.props.type}`;
     return (
       <div className={className}>
-        {this.props.message} <a className="btn">X</a>
+        {this.props.message} <a className="btn" href="#" onClick={this.handleDismiss}>X</a>
       </div>
     );
   }

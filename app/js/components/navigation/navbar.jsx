@@ -8,6 +8,10 @@ import authService from '../../services/authentication-service';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.initHandlers();
+  }
+
+  initHandlers() {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -23,7 +27,7 @@ class NavBar extends React.Component {
         <NavLink exact to="/"> Home </NavLink>
         { !isAuthenticated ? <NavLink exact to="/login"> Login </NavLink> : null }
         { !isAuthenticated ? <NavLink exact to="/register"> Register </NavLink> : null }
-        { isAuthenticated ? <a href="#" onClick={this.handleLogout}> Logout </a> : null }
+        { isAuthenticated ? <a className="btn" href="#" onClick={this.handleLogout}> Logout </a> : null }
       </div>
     );
   }
