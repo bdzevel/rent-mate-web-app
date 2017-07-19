@@ -5,9 +5,15 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import Layout from './components/layout/layout';
+import userService from './services/user-service';
 
 import store from './store/app-store';
+
+import Layout from './components/layout/layout';
+
+function initializeApp() {
+  return userService.retrieveUserProfile();
+}
 
 const App = function() {
   return (
@@ -18,4 +24,6 @@ const App = function() {
     </Provider>
   );
 };
-render(<App />, document.getElementById('app'));
+
+initializeApp()
+  .then(() => render(<App />, document.getElementById('app')));

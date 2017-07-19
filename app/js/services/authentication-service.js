@@ -1,31 +1,23 @@
+import webService from './web-service';
+
 import store from '../store/app-store';
 import { updateUserContext } from '../actions/user-actions';
 
-class AuthService {
+class AuthenticationService {
   login(options) {
-    console.log(process.env.API_SERVER_URL);
-    return fetch(`${process.env.API_SERVER_URL}/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(options),
-    })
-      .then(resp => resp.json())
+    return webService.sendRequest('/auth/login', { body: JSON.stringify(options) })
       .then(profile => store.dispatch(updateUserContext(profile)));
   }
 
+  logout() {
+    return webService.sendRequest('/auth/logout', { }, { parse: false })
+      .then(() => store.dispatch(updateUserContext({ isAuthenticated: false })));
+  }
+
   register(options) {
-    return fetch(`${process.env.API_SERVER_URL}/auth/register`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(options),
-    })
-      .then(resp => resp.json())
+    return webService.sendRequest('/auth/register', { body: JSON.stringify(options) })
       .then(profile => store.dispatch(updateUserContext(profile)));
   }
 }
 
-export default new AuthService();
+export default new AuthenticationService();
