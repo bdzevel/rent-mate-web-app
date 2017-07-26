@@ -24,6 +24,9 @@ module.exports = {
 
     'jsx-a11y/href-no-hash': 'off',
     'react/require-default-props': 'off',
+    'react/jsx-max-props-per-line': 'off',
+    'react/jsx-first-prop-new-line': 'off',
+    'react/jsx-closing-bracket-location': 'off',
   },
   parserOptions: {
     ecmaFeatures: {

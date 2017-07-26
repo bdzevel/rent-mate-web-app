@@ -11,7 +11,8 @@ class AuthenticationService {
 
   logout() {
     return webService.sendRequest('/auth/logout', { }, { parse: false })
-      .then(() => store.dispatch(updateUserContext({ isAuthenticated: false })));
+      .then(() => store.dispatch(updateUserContext({ isAuthenticated: false })))
+      .catch(() => store.dispatch(updateUserContext({ isAuthenticated: false })));
   }
 
   register(options) {

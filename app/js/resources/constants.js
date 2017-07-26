@@ -5,10 +5,20 @@ const actions = {
   NOTIFICATION_DISMISS: 'NOTIFICATION.DISMISS',
 };
 
+const roles = {
+  FULL_ADMIN: 'FULL_ADMIN',
+  BASIC_ADMIN: 'BASIC_ADMIN',
+  LANDLORD: 'LANDLORD',
+  TENANT: 'TENANT',
+  USER: 'USER',
+};
+
 export {
   actions,
+  roles,
 };
 
 export default {
   actions,
+  roles,
 };

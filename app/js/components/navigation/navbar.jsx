@@ -21,12 +21,13 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const isAuthenticated = this.props.profile.isAuthenticated;
+    const { isAuthenticated, isLandlord } = this.props;
     return (
       <div className="navbar">
         <NavLink exact to="/"> Home </NavLink>
         { !isAuthenticated ? <NavLink exact to="/login"> Login </NavLink> : null }
         { !isAuthenticated ? <NavLink exact to="/register"> Register </NavLink> : null }
+        { isLandlord ? <NavLink exact to="/manage-properties"> Manage Properties </NavLink> : null }
         { isAuthenticated ? <a className="btn" href="#" onClick={this.handleLogout}> Logout </a> : null }
       </div>
     );
@@ -34,7 +35,8 @@ class NavBar extends React.Component {
 }
 
 NavBar.propTypes = {
-  profile: PropTypes.shape({ isAuthenticated: PropTypes.bool.isRequired }),
+  isAuthenticated: PropTypes.bool.isRequired,
+  isLandlord: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = state => state.user;

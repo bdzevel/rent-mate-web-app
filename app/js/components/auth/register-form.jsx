@@ -1,5 +1,7 @@
 import React from 'react';
 
+import LabelledInput from '../forms/labelled-input';
+
 import authenticationService from '../../services/authentication-service';
 import notificationService from '../../services/notification-service';
 
@@ -40,20 +42,16 @@ class RegisterForm extends React.Component {
     return (
       <div className="register-form">
         <hr />
-        <label htmlFor="firstName">First Name </label>
-        <input id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange('firstName')} />
+        <LabelledInput id="firstName" label="First Name" type="text" value={this.state.firstName} onChange={this.handleChange('firstName')} />
         <hr />
-        <label htmlFor="lastName">Last Name </label>
-        <input id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange('lastName')} />
+        <LabelledInput id="lastName" label="Last Name" type="text" value={this.state.lastName} onChange={this.handleChange('lastName')} />
         <hr />
-        <label htmlFor="username">Username </label>
-        <input id="username" type="text" value={this.state.username} onChange={this.handleChange('username')} />
+        <LabelledInput id="username" label="Username" type="text" value={this.state.username} onChange={this.handleChange('username')} />
         <hr />
-        <label htmlFor="password">Password </label>
-        <input id="password" type="password" value={this.state.password} onChange={this.handleChange('password')} />
+        <LabelledInput id="password" label="Password" type="password" value={this.state.password} onChange={this.handleChange('password')} />
         <br />
-        <label htmlFor="confirmPassword">Confirm Password </label>
-        <input id="confirmPassword" type="password" value={this.state.confirmPassword} onChange={this.handleChange('confirmPassword')} />
+        <LabelledInput id="confirmPassword" label="Confirm Password" type="password" value={this.state.confirmPassword}
+          onChange={this.handleChange('confirmPassword')} />
         <hr />
         <button onClick={this.handleSubmit}>Register</button>
       </div>
