@@ -19,6 +19,11 @@ class UserService {
         store.dispatch(updateUserContext(profile));
       });
   }
+
+  updateProfile(options) {
+    return webService.sendRequest('/api/user', { method: 'PUT', body: JSON.stringify(options) })
+      .then(() => this.retrieveUserProfile());
+  }
 }
 
 export default new UserService();

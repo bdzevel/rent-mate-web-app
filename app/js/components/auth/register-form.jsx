@@ -41,6 +41,7 @@ class RegisterForm extends React.Component {
   render() {
     return (
       <div className="register-form">
+        <h3>Register</h3>
         <hr />
         <LabelledInput id="firstName" label="First Name" type="text" value={this.state.firstName} onChange={this.handleChange('firstName')} />
         <hr />

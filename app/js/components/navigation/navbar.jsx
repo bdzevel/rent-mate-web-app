@@ -28,6 +28,7 @@ class NavBar extends React.Component {
         { !isAuthenticated ? <NavLink exact to="/login"> Login </NavLink> : null }
         { !isAuthenticated ? <NavLink exact to="/register"> Register </NavLink> : null }
         { isLandlord ? <NavLink exact to="/manage-properties"> Manage Properties </NavLink> : null }
+        { isAuthenticated ? <NavLink exact to="/profile"> Profile </NavLink> : null }
         { isAuthenticated ? <a className="btn" href="#" onClick={this.handleLogout}> Logout </a> : null }
       </div>
     );
