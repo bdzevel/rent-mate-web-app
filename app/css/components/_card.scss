@@ -1,0 +1,9 @@
+.card {
+  background: $white;
+  border: 1px solid $dark-grey;
+  box-shadow: 2px 2px 2px 1px $mid-grey;
+
+  .card-header {
+    font-weight: bold;
+  }
+}

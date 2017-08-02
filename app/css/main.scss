@@ -15,12 +15,15 @@
 @import 'base/helpers';
 
 // 4. Layout-related sections
+@import 'layout/content';
 @import 'layout/header';
 @import 'layout/footer';
 
 // 5. Components
+@import 'components/navbar';
 @import 'components/button';
 @import 'components/flexbox';
+@import 'components/card';
 
 // 6. Page-specific styles
 @import 'pages/home';

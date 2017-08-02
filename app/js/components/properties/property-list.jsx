@@ -6,7 +6,7 @@ import PropertyCard from './property-card';
 const PropertyList = function(props) {
   const properties = props.properties;
   return (
-    <div className="property-card-container flexbox">
+    <div className="property-card-container">
       { properties.map(p => <PropertyCard property={p} />) }
     </div>
   );
