@@ -1,4 +1,24 @@
 .flexbox {
   display: flex;
   flex-direction: row;
+
+  .flex-three-quarter {
+    flex-basis: 75%;
+  }
+
+  .flex-two-third {
+    flex-basis: 67%;
+  }
+
+  .flex-half {
+    flex-basis: 50%;
+  }
+
+  .flex-third {
+    flex-basis: 33%;
+  }
+
+  .flex-quarter {
+    flex-basis: 25%;
+  }
 }

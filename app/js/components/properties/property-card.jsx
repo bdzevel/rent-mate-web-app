@@ -6,17 +6,17 @@ const PropertyCard = function(props) {
   return (
     <div className="card">
       <div className="card-header">
-        <p>{ property.name }</p>
+        { property.name }
       </div>
       <div className="card-body flexbox">
-        <div>
-          <p>{ property.description }</p>
+        <div className="flex-half">
+          <div>{ property.description }</div>
         </div>
-        <div>
-          <p>{ property.address.line1 }</p>
-          { property.address.line2 ? <p>{ property.address.line1 }</p> : null }
-          <p>{ property.address.city }, { property.address.region }</p>
-          <p>{ property.address.postalCode }</p>
+        <div className="flex-half">
+          <div>{ property.address.line1 }</div>
+          { property.address.line2 ? <div>{ property.address.line2 }</div> : null }
+          <div>{ property.address.city }, { property.address.region }</div>
+          <div>{ property.address.postalCode }</div>
         </div>
       </div>
     </div>

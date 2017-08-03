@@ -10,19 +10,13 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
+$brand-color: #ffc72b !default;
+$brand-second-color:#5facff !default;
+$brand-off-color: #99966f !default;
+
 /// Copy text color
 /// @type Color
 $text-color: rgb(34, 34, 34) !default;
-
-/// Main brand color
-/// @type Color
-$brand-color: rgb(79, 86, 255) !default;
-
-/// @type Color
-$brand-second-color: rgb(232, 70, 69) !default;
-
-/// @type Color
-$brand-off-color: rgb(255, 213, 70) !default;
 
 /// @type Color
 $white: rgb(255, 255, 255) !default;

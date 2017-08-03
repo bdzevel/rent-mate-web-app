@@ -1,9 +1,17 @@
 .card {
-  background: $white;
+  background-color: $white;
+  margin: 0 0 12px;
   border: 1px solid $dark-grey;
   box-shadow: 2px 2px 2px 1px $mid-grey;
 
   .card-header {
+    color: $brand-second-color;
+    background-color: $brand-color;
+    padding: 8px;
     font-weight: bold;
+  }
+
+  .card-body {
+    padding: 8px;
   }
 }
