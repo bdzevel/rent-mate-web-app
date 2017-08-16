@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import UploadImageForm from './upload-image-form';
+
 const PropertyCard = function(props) {
   const property = props.property;
+  const pictureUrls = property.pictureUrls;
+  const hasPictures = pictureUrls && pictureUrls.length;
   return (
     <div className="card">
       <div className="card-header">
         { property.name }
       </div>
-      <div className="card-body flexbox">
+      <div className="flexbox card-body">
         <div className="flex-half">
           <div>{ property.description }</div>
         </div>
@@ -19,12 +23,17 @@ const PropertyCard = function(props) {
           <div>{ property.address.postalCode }</div>
         </div>
       </div>
+      <div className="card-images">
+        { hasPictures ? pictureUrls.map(url => <img src={url} alt="" width="100" />) : null }
+      </div>
+      <UploadImageForm propertyId={property._id} />
     </div>
   );
 };
 
 PropertyCard.propTypes = {
   property: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     address: PropTypes.shape({

@@ -14,6 +14,7 @@ const PropertyList = function(props) {
 
 PropertyList.propTypes = {
   properties: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     address: PropTypes.shape({

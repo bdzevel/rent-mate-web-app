@@ -12,6 +12,7 @@ module.exports = {
     'guard-for-in': 'off',
     'class-methods-use-this': 'off',
     'no-plusplus': 'off',
+    'no-continue': 'off',
 
     'max-len': ["error", 160],
     'array-bracket-spacing': [ 'error', 'always' ],

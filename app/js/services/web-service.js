@@ -1,7 +1,8 @@
 import WebError from '../errors/web-error';
 
 class WebService {
-  sendRequest(url, req, options = { interpretHttpStatus: true, parse: true }) {
+  sendRequest(url, req, options = { baseUrl: null, interpretHttpStatus: true, parse: true }) {
+    const baseUrl = options.baseUrl || process.env.API_SERVER_URL;
     const payload = Object.assign({
       method: 'POST',
       credentials: 'include',
@@ -9,7 +10,7 @@ class WebService {
         'Content-Type': 'application/json',
       },
     }, req);
-    return fetch(`${process.env.API_SERVER_URL}${url}`, payload)
+    return fetch(`${baseUrl}${url}`, payload)
       .then(function(resp) {
         if (options && options.interpretHttpStatus) {
           if (resp.status >= 400) {

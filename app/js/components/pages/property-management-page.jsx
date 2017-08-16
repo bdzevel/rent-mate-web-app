@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import PropertyList from '../properties/property-list';
+import UploadImageForm from '../properties/upload-image-form';
 import CreatePropertyForm from '../properties/create-property-form';
 
 const PropertyManagementPage = function(props) {
@@ -15,6 +16,9 @@ const PropertyManagementPage = function(props) {
       <PropertyList properties={props.properties.allProperties} />
       <hr />
       <CreatePropertyForm />
+      <hr />
+      <UploadImageForm propertyId="helloworld" />
+      <hr />
     </div>
   );
 };
